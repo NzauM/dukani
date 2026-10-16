@@ -1,0 +1,7 @@
+#cartDiv, #productFormDiv{
+    display: none;
+}
+#cartCardDiv{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}

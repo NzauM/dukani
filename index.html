@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+         <button id="backBtn">Back</button>
+         <button id="homeBtn">Home</button>
+         <button id="addBtn">Add New Product</button>
+         <button id="cartBtn">Cart</button>
+    </nav>
+   
+    
+    <div id="productsContainer">
+      <h1>Karibu Dukani</h1>
+    <h4>Available Products</h4>
+    </div>
+    
+
+    <div id="productFormDiv">
+        <h1>Add New Product</h1>
+        <form id="productForm">
+            <label for="productName">Enter Product Name: </label>
+            <input type="text" name="productName" id="productName" > <br>
+            <label for="productDescription">Enter Product Description: </label>
+            <textarea id="productDescription" name="productDescription"></textarea> <br>
+            <label for="productPrice">Enter Product Price</label>
+            <input type="number" name="productPrice"> <br>
+            <label for="productPoster">Add a poster</label>
+            <input type="text" name="productPoster" id="productPoster"> <br>
+            <button>ADD PRODUCT</button>
+        </form>
+    </div>
+    <div id="cartDiv">
+        <h1>Cart Items</h1>
+    </div>
+    <script type="module" src="./scripts.js"></script>
+</body>
+</html>
