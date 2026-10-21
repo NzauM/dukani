@@ -5,7 +5,7 @@
 
 // cartButton.addEventListener('click',changeStyles)
 
-import { products,myName } from './products.js'
+// import { products,myName } from './products.js'
 
 document.addEventListener('DOMContentLoaded',()=>{
 
@@ -42,6 +42,8 @@ cartButtonArray.forEach((element)=>{
 
 })
 
+
+
 let priceparagraph = document.querySelectorAll('.price')
 console.log(priceparagraph)
 let paragraphs = Array.from(priceparagraph)
@@ -75,24 +77,27 @@ function handleAddProduct(event){
 }
 
 // loop through the products array and create a product card for each
-products.forEach(showProduct)
+// products.forEach(showProduct)
+// let products = []
+
+fetch("https://kolzsticks.github.io/Free-Ecommerce-Products-Api/main/products.json").then((resp)=>resp.json()).then((data)=>data.forEach(showProduct))
 
 
 function showProduct(item){
     // create a card with image, description, price, name, add to cart button
     let productCard = document.createElement('div')
     const priceContainer = document.createElement("h3")
-    priceContainer.textContent = "PRICE: Kshs."+ item.productPrice;
+    priceContainer.textContent = "PRICE: Kshs."+ item.priceCents;
     const descriptionContainer = document.createElement('p')
-    descriptionContainer.textContent = "Description: "+item.productDescription
+    descriptionContainer.textContent = "Description: "+item.description
     const buttonContainer = document.createElement('button')
     buttonContainer.innerText = "ADD TO CART"
     buttonContainer.id = item.id
     buttonContainer.addEventListener('click',handleAddProduct)
     const nameContainer = document.createElement('h3')
-    nameContainer.textContent = "Name"+item.productName
+    nameContainer.textContent = "Name"+item.name
     const  imgContainer = document.createElement("img")
-    imgContainer.src = item.productPoster
+    imgContainer.src = item.image
     productCard.append(nameContainer,imgContainer,descriptionContainer,priceContainer,buttonContainer)
 
     productsContainer.appendChild(productCard)
